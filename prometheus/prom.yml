@@ -9,4 +9,4 @@ scrape_configs:
   - job_name: 'railway-exporter'
     scrape_interval: 1m
     static_configs:
-      - targets: ['railway-prometheus-exporter.railway.internal:9090']
+      - targets: ['prometheus-exporter.railway.internal:9090']
