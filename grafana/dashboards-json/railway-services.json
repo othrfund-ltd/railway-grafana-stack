@@ -12,7 +12,7 @@
       "title": "CPU Usage (cores)",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
       "targets": [{ "expr": "railway_service_cpu_usage", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "short" } }
     },
     {
@@ -21,7 +21,7 @@
       "title": "CPU Utilization %",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
       "targets": [{ "expr": "railway_service_cpu_utilization * 100", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "percent", "max": 100 } }
     },
     {
@@ -30,7 +30,7 @@
       "title": "Memory Usage (GB)",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
       "targets": [{ "expr": "railway_service_memory_usage_gb", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "decgbytes" } }
     },
     {
@@ -39,25 +39,25 @@
       "title": "Memory Utilization %",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
       "targets": [{ "expr": "railway_service_memory_utilization * 100", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "percent", "max": 100 } }
     },
     {
       "id": 5,
       "type": "timeseries",
-      "title": "Network Received (GB)",
+      "title": "Network Received (rate/5m)",
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
       "targets": [{ "expr": "rate(railway_service_network_rx_gb_total[5m])", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "decgbytes" } }
     },
     {
       "id": 6,
       "type": "timeseries",
-      "title": "Network Transmitted (GB)",
+      "title": "Network Transmitted (rate/5m)",
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
       "targets": [{ "expr": "rate(railway_service_network_tx_gb_total[5m])", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "decgbytes" } }
     },
     {
@@ -66,7 +66,7 @@
       "title": "Current CPU Utilization",
       "gridPos": { "h": 6, "w": 24, "x": 0, "y": 24 },
       "targets": [{ "expr": "railway_service_cpu_utilization * 100", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "percent", "max": 100, "thresholds": { "steps": [{ "value": 0, "color": "green" }, { "value": 60, "color": "yellow" }, { "value": 80, "color": "red" }] } } }
     },
     {
@@ -75,7 +75,7 @@
       "title": "Current Memory Utilization",
       "gridPos": { "h": 6, "w": 24, "x": 0, "y": 30 },
       "targets": [{ "expr": "railway_service_memory_utilization * 100", "legendFormat": "{{service_name}}", "refId": "A" }],
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "datasource": { "type": "prometheus", "uid": "grafana_prometheus" },
       "fieldConfig": { "defaults": { "unit": "percent", "max": 100, "thresholds": { "steps": [{ "value": 0, "color": "green" }, { "value": 60, "color": "yellow" }, { "value": 80, "color": "red" }] } } }
     }
   ],
